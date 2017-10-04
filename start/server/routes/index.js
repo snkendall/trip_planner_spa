@@ -1,3 +1,5 @@
+'use strict'
+
 const router = require('express').Router();
 const {Hotel, Restaurant, Activity} = require('../../models');
 

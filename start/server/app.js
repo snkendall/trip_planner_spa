@@ -26,8 +26,8 @@ app.use(function(err, req, res, next){
     res.send('Something went wrong: ' + err.message);
 });
 
-app.listen(3000, function(){
-    console.log('Listening on 3000');
+app.listen(1337, function(){
+    console.log('Listening on 1337');
     db.sync()
     .then(function(){
         console.log('The db is synced')
