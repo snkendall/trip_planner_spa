@@ -2,9 +2,9 @@ const router = require('express').Router();
 const {Hotel, Restaurant, Activity} = require('../../models');
 
 router.get('/api', function(req, res, next){
-   Promise.all([Hotel.findAll(),
-        Restaurant.findAll(),
-         Activity.findAll()])
+   Promise.all([Hotel.findAll({ include: [{ all: true }] }),
+        Restaurant.findAll({ include: [{ all: true }] }),
+         Activity.findAll({ include: [{ all: true }] })])
     .then(attractions => {
         const [hotel, restaurant, activity] = attractions;
         res.json({
